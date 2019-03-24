@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习bootstrap的table插件 </title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <script src="public/libs/jquery.min.js"></script>
+    <script src="public/libs/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+
+    <!-- Latest compiled and minified Locales -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var option={
+                url:'json/user.json',
+                pagination:true,//显示分页工具条
+                sidePagination:"server",//client:服务端一次性把所有数据返回给客户端，客户端分页；“server”：服务端分页
+                columns: [{
+                    field: 'id',
+                    title: '编号'//标题
+                }, {
+                    field: 'name',
+                    title: '用户名'
+                }, {
+                    field: 'password',
+                    title: '密码'
+                } ]
+            };
+
+            $("#myTable").bootstrapTable(option);
+        });
+
+    </script>
+
+</head>
+<body>
+<table id="myTable"></table>
+
+</body>
+</html>
